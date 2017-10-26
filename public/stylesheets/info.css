@@ -1,0 +1,31 @@
+#info{
+    position: relative;
+    top: 30%;
+}
+
+.input{
+    background: transparent;
+
+    border-radius: 100px;
+    border: ridge 2px rgba(166,166,166,0.58);
+
+    width: 25%;
+    height: 45px;
+
+    font-size: 16px;
+}
+
+.button{
+    color: #545454;
+    background-color: rgba(165,214,167,0.53);
+
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Consolas;
+
+    border-radius: 10px;
+    border-color: rgba(5, 160, 69, 0.30);
+
+    width: 22%;
+    height: 35px;
+}
