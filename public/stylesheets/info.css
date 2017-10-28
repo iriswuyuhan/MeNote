@@ -1,13 +1,14 @@
 #info{
     position: relative;
-    top: 30%;
+    top: 17%;
 }
 
 .input{
+    color: #2b2b2b;
     background: transparent;
 
     border-radius: 100px;
-    border: ridge 2px rgba(166,166,166,0.58);
+    border: ridge 3px rgba(166, 166, 166, 0.58);
 
     width: 25%;
     height: 45px;
@@ -21,10 +22,10 @@
 
     font-size: 20px;
     font-weight: 600;
-    font-family: Consolas;
+    font-family: Consolas, monospace;
 
     border-radius: 10px;
-    border-color: rgba(5, 160, 69, 0.30);
+    border-color: rgba(165, 214, 167, 0.53);
 
     width: 22%;
     height: 35px;

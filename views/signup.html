@@ -5,6 +5,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="../public/stylesheets/intro.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/info.css">
 </head>
 <body>
 <div id="webHeader">
@@ -13,18 +14,28 @@
     </div>
 </div>
 <div id="introBody" align="center">
-    <!--这里应该画一个注册的框-->
-    <a id="signupLogo" href="signup.html">
-        <img src="../public/images/intro/pencil.png">
-        <span>Sign Up</span>
-    </a>
-    <form>
-
-    </form>
+    <div id="info">
+        <a id="loginLogo" href="signup.html">
+            <img src="../public/images/intro/pencil.png">
+            Sign Up
+        </a>
+        <form action="" method="get">
+            <p>
+                <input type="text" name="userid" class="input" placeholder="  user name">
+            </p>
+            <p>
+                <input type="password" name="password" class="input" placeholder="  password">
+            </p>
+            <p>
+                <input type="password" name="password" class="input" placeholder="  confirm your password">
+            </p>
+            <input type="submit" value="  Sign Up!  " class="button">
+        </form>
+    </div>
 </div>
 <hr>
-<div id="footer">
-    <footer align="center">
+<div id="footer" align="center">
+    <footer>
         &copy;2017-版权所有 吴宇涵
     </footer>
 </div>
