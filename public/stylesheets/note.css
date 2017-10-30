@@ -16,6 +16,7 @@
     margin-top: 1%;
     margin-bottom: 1%;
     padding: 1%;
+    border-radius: 10px;
 
     overflow-y: scroll;
     background-color: rgba(172, 170, 164, 0.45);
@@ -29,7 +30,25 @@
 }
 
 #title {
+    width: 80%;
+    
     margin-bottom: 2%;
+    margin-right: 3%;
+}
+
+#title_label {
+    color: rgba(43, 43, 43, 0.89);
+    font-size: large;
+    font-weight: 600;
+}
+
+#title_space {
+    width: 90%;
+    height: 30px;
+
+    border-radius: 10px;
+    border: ridge 2px rgba(166, 166, 166, 0.58);
+
 }
 
 #text {
@@ -38,6 +57,8 @@
 
     margin-bottom: 2%;
     padding: 2%;
+    border-radius: 10px;
+    border: ridge 2px rgba(166, 166, 166, 0.58);
 
     font-size: x-large;
 }
