@@ -3,18 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>MeNote</title>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/note.css">
 </head>
 <body>
 <div id="webHeader">
     <div id="webTitle">
-        <a href="index.html"><img src="./images/logo.png"></a>
+        <a href="index.html"><img src="../public/images/logo.png"></a>
         <!--这里应该有登出和用户的一些东西-->
     </div>
-    <div id="note">
-        <!--TODO 应该有一些搜索和归类-->
-        <!--左边是用户的历史note，右边是写note的地方-->
+</div>
+<div id="notebook">
+    <!--TODO 应该有一些搜索和归类-->
+    <!--左边是用户的历史note，右边是写note的地方-->
+    <div id="index" class="note">
+        aaa
     </div>
+
+    <div id="content" class="note">
+        <div id="title">
+            <label id="title_label">
+                Title:
+            </label>
+            <input type="text" placeholder="">
+        </div>
+        <textarea id="text"></textarea>
+        <div align="center">
+            <button class="button" name="submit">save</button>
+        </div>
+    </div>
+</div>
+<hr>
+<div id="footer" align="center">
+    <footer>
+        &copy;2017-版权所有 吴宇涵
+    </footer>
 </div>
 </body>
 </html>
