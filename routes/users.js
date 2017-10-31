@@ -13,7 +13,7 @@ var fs = require('fs');
 var path = "./notes/";
 
 //TODO 需要做一些拦截器
-//filepath=./note
+//验证用户登录
 router.post('/login', urlEncoded, function (req, res, next) {
     var params = req.body;
     var username = params.username;
@@ -28,7 +28,7 @@ router.post('/login', urlEncoded, function (req, res, next) {
                 //读取用户note文件
                 fs.readdir(path + username, function (err, files) {
                     if (!err) {
-                        res.render('note', {files: files});
+                        res.render('note', {username: username, files: files});
                     }
                     else {
                         console.error(err);
@@ -39,6 +39,30 @@ router.post('/login', urlEncoded, function (req, res, next) {
         else {
             console.error(err);
         }
+    });
+});
+
+//获取用户某个笔记
+router.post('/getNote', urlEncoded, function (req, res, next) {
+    var params = req.body;
+    var username = params.username;
+    var fileName = params.fileName;
+
+    var buff = new Buffer(2048);
+    fs.open(path + username + "/" + fileName, 'r+', function (err, fd) {
+        if (err) {
+            console.error(err);
+        }
+
+        fs.read(fd, buff, 0, buff.length, 0, function (err, bytes) {
+            if (err) {
+                console.log(err);
+            }
+
+            if (bytes > 0) {
+                res.send({content: buff.slice(0, bytes).toString()});
+            }
+        });
     });
 });
 

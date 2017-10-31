@@ -7,9 +7,14 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/note.css">
 
     <script>
+        var username = '<%- JSON.stringify(username) %>';
+        localStorage.setItem('user', JSON.parse(username));
+
         var files = '<%- JSON.stringify(files) %>';
         files = JSON.parse(files);
     </script>
+    <script type="text/javascript" src="../javascripts/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascripts/note.js"></script>
 </head>
 <body>
 <div id="webHeader">
@@ -56,7 +61,7 @@
         var li = document.createElement("li");
         li.innerHTML = t;
         li.setAttribute("id", "no" + i);
-        li.setAttribute("onclick")
+        li.setAttribute("onclick", "getNote(\"" + t + "\")");
 
         index.appendChild(li);
     });
