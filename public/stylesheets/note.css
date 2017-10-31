@@ -7,7 +7,7 @@
     float: left;
 }
 
-#index {
+#index_container {
     width: 20%;
     height: 90%;
 
@@ -15,11 +15,20 @@
     margin-right: 2%;
     margin-top: 1%;
     margin-bottom: 1%;
-    padding: 1%;
     border-radius: 10px;
+
+    font-size: 120%;
 
     overflow-y: scroll;
     background-color: rgba(172, 170, 164, 0.45);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 4px;
 }
 
 #content {

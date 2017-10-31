@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>MeNote</title>
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
-    <link rel="stylesheet" type="text/css" href="../public/stylesheets/note.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/note.css">
+
+    <script>
+        var files = '<%- JSON.stringify(files) %>';
+        files = JSON.parse(files);
+    </script>
 </head>
 <body>
 <div id="webHeader">
     <div id="webTitle">
-        <a href="index.html"><img src="../public/images/logo.png"></a>
+        <a href="index.html"><img src="../images/logo.png"></a>
         <!--这里应该有登出和用户的一些东西-->
     </div>
 </div>
 <div id="notebook">
     <!--TODO 应该有一些搜索和归类-->
     <!--左边是用户的历史note，右边是写note的地方-->
-    <div id="index" class="note">
-        aaa
+    <div id="index_container" class="note">
+        <ul id="index"></ul>
     </div>
 
     <div id="content" class="note" align="center">
@@ -44,4 +49,16 @@
     </footer>
 </div>
 </body>
+<script>
+    var index = document.getElementById("index");
+    var i = 0;
+    files.forEach(function (t) {
+        var li = document.createElement("li");
+        li.innerHTML = t;
+        li.setAttribute("id", "no" + i);
+        li.setAttribute("onclick")
+
+        index.appendChild(li);
+    });
+</script>
 </html>
