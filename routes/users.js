@@ -42,6 +42,25 @@ router.post('/login', urlEncoded, function (req, res, next) {
     });
 });
 
+//用户注册
+router.post('/signup', urlEncoded, function (req, res, next) {
+    //TODO 尚未检查重名用户,也未为之创建文件夹
+    var params = req.body;
+    var username = params.username;
+    var password = params.password;
+
+    var stmnt = "insert into user values(null,'" + username + "','" + password + "');"
+
+    db.run(stmnt, function (err) {
+        if (!err) {
+            //TODO 还是交由界面吧······
+        }
+        else {
+            console.error(err);
+        }
+    })
+});
+
 //获取用户某个笔记
 router.post('/getNote', urlEncoded, function (req, res, next) {
     var params = req.body;
@@ -64,6 +83,11 @@ router.post('/getNote', urlEncoded, function (req, res, next) {
             }
         });
     });
+});
+
+//保存用户对笔记的修改
+router.post('/saveNote', urlEncoded, function (req, res, next) {
+
 });
 
 module.exports = router;

@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/note.css">
 
     <script>
+        //TODO 这里应该直接在登录处设置
         var username = '<%- JSON.stringify(username) %>';
         localStorage.setItem('user', JSON.parse(username));
 
@@ -14,7 +15,6 @@
         files = JSON.parse(files);
     </script>
     <script type="text/javascript" src="../javascripts/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../javascripts/note.js"></script>
 </head>
 <body>
 <div id="webHeader">
@@ -43,7 +43,7 @@
         </div>
         <textarea id="text"></textarea>
         <div>
-            <button class="button" name="submit">save</button>
+            <button class="button" name="submit" onclick="saveNote()">save</button>
         </div>
     </div>
 </div>
@@ -57,13 +57,21 @@
 <script>
     var index = document.getElementById("index");
     var i = 0;
-    files.forEach(function (t) {
-        var li = document.createElement("li");
-        li.innerHTML = t;
-        li.setAttribute("id", "no" + i);
-        li.setAttribute("onclick", "getNote(\"" + t + "\")");
 
+    function appendIndexItem(itemName) {
+        var li = document.createElement("li");
+        li.innerHTML = itemName;
+        li.setAttribute("id", "no" + i);
+        li.setAttribute("onclick", "getNote(\"" + itemName + "\")");
+
+        return li;
+    }
+
+    files.forEach(function (t) {
+        var li = appendIndexItem(t);
         index.appendChild(li);
+        i++;
     });
 </script>
+<script type="text/javascript" src="../javascripts/note.js"></script>
 </html>

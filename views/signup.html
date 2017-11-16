@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/intro.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/info.css">
+
+    <script type="text/javascript" src="../javascripts/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascripts/signup.js"></script>
 </head>
 <body>
 <div id="webHeader">
@@ -19,18 +22,17 @@
             <img src="./images/intro/pencil.png">
             Sign Up
         </a>
-        <form action="" method="get">
-            <p>
-                <input type="text" name="username" class="input" placeholder="  user name">
-            </p>
-            <p>
-                <input type="password" name="password" class="input" placeholder="  password">
-            </p>
-            <p>
-                <input type="password" name="password" class="input" placeholder="  confirm your password">
-            </p>
-            <input type="submit" value="  Sign Up!  " class="button">
-        </form>
+
+        <p>
+            <input type="text" id="username" name="username" class="input" placeholder="  user name">
+        </p>
+        <p>
+            <input type="password" id="passwrd1" name="password" class="input" placeholder="  password">
+        </p>
+        <p>
+            <input type="password" id="passwrd2" name="password" class="input" placeholder="  confirm your password">
+        </p>
+        <button class="button" onclick="signup()"> Sign Up!</button>
     </div>
 </div>
 <hr>
