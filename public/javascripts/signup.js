@@ -1,7 +1,7 @@
 var url = "/users/signup";
 
 function signup() {
-    //TODO 还要判断用户名和密码的长度
+    //TODO 还要判断用户名和密码的长度,还要进行正则的筛选
     var username = document.getElementById("username").value;
     if (username == null) {
         alert("You haven't set your user name!");
@@ -28,7 +28,13 @@ function signup() {
                     dataType: "json",
                     async: false,
                     success: function (data) {
-                        alert("success");
+                        if (data == "1") {
+                            //TODO 这里应该写一个定时跳转界面
+                            window.location.href = "/login";
+                        }
+                        else {
+                            alert("Your name already exists!Please enter another one!");
+                        }
                     }
                 });
             }
